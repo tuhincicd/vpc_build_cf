@@ -3,7 +3,7 @@
 
   "Description" : "AWS CloudFormation VPC Creation"
 
-  "Parameters" : {
+  "Mappings" : {
    
     "SubnetConfig" : {
       "VPC"     : { "CIDR" : "10.0.0.0/16" },
