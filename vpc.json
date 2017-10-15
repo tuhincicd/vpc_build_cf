@@ -9,7 +9,7 @@
       "VPC"     : { "CIDR" : "10.0.0.0/16" },
       "Public"  : { "CIDR" : "10.0.0.0/24" },
       "Private" : { "CIDR" : "10.0.1.0/24" }
-    }
+    },
   },
   
   "Resources" : {
@@ -20,7 +20,7 @@
       "Properties" : {
         "CidrBlock" : { "Fn::FindInMap" : [ "SubnetConfig", "VPC", "CIDR" ]},
         
-      }
-    }
-  }
+      },
+    },
+  },
 }
