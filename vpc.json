@@ -3,13 +3,13 @@
 
   "Description" : "AWS CloudFormation VPC Creation"
 
-  "Parameters" : {
+  "Mappings" : {
    
     "SubnetConfig" : {
       "VPC"     : { "CIDR" : "10.0.0.0/16" },
       "Public"  : { "CIDR" : "10.0.0.0/24" },
       "Private" : { "CIDR" : "10.0.1.0/24" }
-    }
+    },
   },
   
   "Resources" : {
@@ -19,11 +19,8 @@
       "Type" : "AWS::EC2::VPC",
       "Properties" : {
         "CidrBlock" : { "Fn::FindInMap" : [ "SubnetConfig", "VPC", "CIDR" ]},
-        "Tags" : [
-          { "Key" : "Application", "Value" : { "Ref" : "AWS::StackId" } },
-          { "Key" : "Network", "Value" : "Public" }
-        ]
-      }
-    }
-  }
+        
+      },
+    },
+  },
 }
