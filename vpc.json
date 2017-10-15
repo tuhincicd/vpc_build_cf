@@ -19,10 +19,7 @@
       "Type" : "AWS::EC2::VPC",
       "Properties" : {
         "CidrBlock" : { "Fn::FindInMap" : [ "SubnetConfig", "VPC", "CIDR" ]},
-        "Tags" : [
-          { "Key" : "Application", "Value" : { "Ref" : "AWS::vpcbuild" } },
-          { "Key" : "Network", "Value" : "Public" }
-        ]
+        
       }
     }
   }
